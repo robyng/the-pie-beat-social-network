@@ -25,7 +25,8 @@ const UserSchema = new Schema({
             ref: 'Thought'
         }
     ],
-    // self reference by _id to User model     
+    // self reference by _id to User model
+    //Need to add virtual schema for friend count that gets number of users' friends     
     friends: [
         {
             type: Schema.Types.ObjectId,
