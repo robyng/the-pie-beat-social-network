@@ -18,13 +18,20 @@ const UserSchema = new Schema({
             message: 'Must be valid email'
         }
     },
-    thoughts: {
-        type: [Thought.id] // check this. Supposed to be array that references _id of Thought model
-
-    },
-    friends: {
-        type: [UserSchema] // check this. self reference by _id
-    }
+    //array that references _id of Thought model
+    thoughts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought'
+        }
+    ],
+    // self reference by _id to User model     
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 })
 
 const User = model('User', UserSchema);
