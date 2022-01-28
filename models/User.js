@@ -13,10 +13,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        validate: {
-            validator: () => Promise.resolve(false),
-            message: 'Must be valid email'
-        }
+        match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, "Must be a valid email!"]
     },
     //array that references _id of Thought model
     thoughts: [
