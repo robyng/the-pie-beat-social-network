@@ -3,6 +3,6 @@ const userRoutes = require('./user-routes');
 
 
 // prefix of user to routes in user-routes.js
-router.use('/pizzas', userRoutes);
+router.use('/users', userRoutes);
 
 module.exports = router;
