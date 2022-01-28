@@ -5,7 +5,6 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        // dropDups: true,
         trim: true
 
     },
@@ -31,6 +30,10 @@ const UserSchema = new Schema({
         }
     ]
 })
+
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+  });
 
 const User = model('User', UserSchema);
 module.exports = User;
