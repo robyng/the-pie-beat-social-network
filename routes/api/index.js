@@ -8,7 +8,7 @@ router.use('/users', userRoutes);
 
 // root for thought routes
 //NOTE server stops with this line. says middleware required
-//router.use('/thoughts', thoughtRoutes);
+router.use('/thoughts', thoughtRoutes);
 
 
 module.exports = router;

@@ -9,3 +9,5 @@ const {
   router
     .route('/')
     .get(getAllThoughts)
+
+    module.exports = router;
