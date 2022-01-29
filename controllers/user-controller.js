@@ -55,7 +55,22 @@ const userController = {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
-    }
+    },
+
+    // add friend to user list
+    addFriend(req,res) {
+        User.findByIdAndUpdate(req.params.id, req.body)
+        .then(dbUserData => {
+            if (!dbUserData) {
+              res.json({ message: 'No user found by this id!' });
+              return;
+            }
+            res.json(dbUserData);
+          })
+          .catch(err => {
+            res.json(err);
+          });
+    },
 }
 
 module.exports = userController;
