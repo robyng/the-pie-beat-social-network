@@ -14,7 +14,7 @@ const ReactionSchema = new Schema({
         required: true,
         maxlength: 280
     },
-//username, string req
+    //username, string req
     username: {
         type: String,
         required: true
@@ -49,16 +49,16 @@ const ThoughtSchema = new Schema({
         required: true
     },
     reactions: [ReactionSchema]
-        //adjust Array of nested documents created with the reactionSchema  
+    //adjust Array of nested documents created with the reactionSchema  
 
 }, {
-    toJSON:{getters:true}
+    toJSON: { getters: true }
 })
 
 //Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-ThoughtSchema.virtual('reactionCount').get(function() {
+ThoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
-  });
+});
 
 const Thought = model('Thought', ThoughtSchema)
 module.exports = Thought

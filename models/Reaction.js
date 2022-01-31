@@ -1,5 +1,5 @@
 //import mongoose
-const { Schema, Types }  = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 //reactionId, default is objecid
 const ReactionSchema = new Schema({
@@ -14,7 +14,7 @@ const ReactionSchema = new Schema({
         required: true,
         maxlength: 280
     },
-//username, string req
+    //username, string req
     username: {
         type: String,
         required: true
