@@ -71,7 +71,46 @@ deleteThought(req,res) {
         res.json(err);
       });
 
-}
+},
+
+addReaction({params, body},res) {
+    Thought.findOneAndUpdate(
+        {_id: params.id},
+        {$push: { reactions: body}},
+        {new: true}
+    )
+    .then(dbUserData => {
+        if (!dbUserData) {
+          res.json({ message: 'No thought found by this id!' });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+
+},
+
+deleteReaction({ params }, res) {
+    Thought.findOneAndUpdate(
+        
+      { _id: params.id },
+      { $pull: { reactions: { reactionId:  params.reactionId } } },
+      { new: true }
+      
+    )
+    .then(dbUserData => {
+        if (!dbUserData) {
+          res.json({ message: 'No reaction or thought found by this id!' });
+          return;
+        }
+        res.json(dbUserData);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  }
 
 
 }
