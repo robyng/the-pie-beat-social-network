@@ -13,13 +13,25 @@ const {
   router
     .route('/')
     .get(getAllThoughts)
-    .get(getThoughtById)
-    .post(createThought)
 
-    //thoughts by id
+
+  //       //thoughts by thought id
   router
-    .route('/:id')
+  .route('/:id')
+    .get(getThoughtById)
     .put(updateOneThought)
     .delete(deleteThought)  
+  //   .put(updateOneThought)
+  //   .delete(deleteThought)  
+
+  router
+  .route('/:userId/:commentId')
+    // .get(getThoughtById)
+
+
+
+  router
+  .route('/:userId')
+  .post(createThought)  
 
     module.exports = router;
