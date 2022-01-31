@@ -23,7 +23,7 @@ getThoughtById(req, res) {
 // create new thought and push the created thought's id to the user's thought array
 createThought({params, body}, res) {
     console.log(body)
-        // body is "thoughtText": "My String", "username": "robyng", "reactions": "", "reactionCount": ""
+        // body is "thoughtText": "My String", "username": "robyng", "userId": "61f..."
     Thought.create(body)
         .then(({ _id }) => {
             return User.findOneAndUpdate(

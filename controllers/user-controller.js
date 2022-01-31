@@ -57,9 +57,17 @@ const userController = {
             .catch(err => res.status(400).json(err));
     },
 
-    // add friend to user list
-    addFriend(req,res) {
-        User.findByIdAndUpdate(req.params.id, req.body)
+    // add friend to user's friend list
+    addFriend({params, body},res) {
+        User.findByIdAndUpdate(params.id)
+        .then(({ _id }) => {
+          return User.findOneAndUpdate(
+              { _id: _id },
+              // params.friendId refers to the route /api/users/:id/friends/:friendId
+              { $push: { friends: params.friendId }},
+              {new: true}
+          )
+        })
         .then(dbUserData => {
             if (!dbUserData) {
               res.json({ message: 'No user found by this id!' });

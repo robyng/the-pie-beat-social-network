@@ -23,9 +23,5 @@ const {
     .put(updateOneThought)
     .delete(deleteThought)  
 
-    //must get user id to identify who is creating the thought
-  router
-  .route('/:userId')
- 
 
     module.exports = router;
