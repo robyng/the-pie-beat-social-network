@@ -1,6 +1,7 @@
 # The Pie Beat Social Network
 
 ## About
+
 This is the MVP backend API for The Pie Beat Social Network using MongoDb, Mongoose, and Express.js. 
 
 Have thoughts on pies? Share your recipes by posting a 'thought'. 
@@ -30,8 +31,8 @@ Create Thought, See all Thoughts, See one thought, add reaction, delete reaction
 https://watch.screencastify.com/v/5dZeiFNZI4FtAmrsWHAx
 
 
-
 ## Requirements
+
 1. MongoDB
 2. Command Line Interface like Git Bash or VS Code
 3. NPM mongoose
