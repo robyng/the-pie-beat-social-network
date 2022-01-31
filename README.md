@@ -18,7 +18,18 @@ See all the available routes in action:
 Add, update, delete, view all or single 'thought'. 
 Add or remove 'reactions'.
 Add or remove friends.
-Add a user, view all or one user.
+
+
+Install app and then test Add a user, view all users and view one user:
+https://watch.screencastify.com/v/1N3cwQxFvmuE8BcINqse 
+
+Update User, Delete User, Add Friend, Delete Friend:
+https://watch.screencastify.com/v/IIf9HeNG5CESekeHkAFC 
+
+Create Thought, See all Thoughts, See one thought, add reaction, delete reaction:
+https://watch.screencastify.com/v/5dZeiFNZI4FtAmrsWHAx
+
+
 
 ## Requirements
 1. MongoDB

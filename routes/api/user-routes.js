@@ -19,7 +19,7 @@ router
 router
   .route('/:id')
   .get(getOneUser)
-  .post(updateOneUser)
+  .put(updateOneUser)
   .delete(deleteUser)
 
 
